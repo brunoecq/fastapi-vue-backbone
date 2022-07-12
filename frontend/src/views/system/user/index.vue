@@ -1,12 +1,11 @@
 <template>
   <div class="app-container">
     <el-row :gutter="20">
-      <!--部门数据-->
       <el-col :span="4" :xs="24">
         <div class="head-container">
           <el-input
             v-model="deptName"
-            placeholder="请输入部门名称"
+            placeholder="Please enter the department name"
             clearable
             size="small"
             prefix-icon="el-icon-search"
@@ -25,46 +24,45 @@
           />
         </div>
       </el-col>
-      <!--用户数据-->
       <el-col :span="20" :xs="24">
         <el-form ref="queryForm" :model="queryParams" :inline="true" label-width="68px">
-          <el-form-item label="用户编号" prop="username">
+          <el-form-item label="The user id" prop="username">
             <el-input
               v-model="queryParams.username"
-              placeholder="请输入用户编号"
+              placeholder="Please enter your user number"
               clearable
               size="small"
               style="width: 240px"
               @keyup.enter.native="handleQuery"
             />
           </el-form-item>
-          <el-form-item label="用户名称" prop="nickname">
+          <el-form-item label="The user name" prop="nickname">
             <el-input
               v-model="queryParams.nickname"
-              placeholder="请输入用户名称"
+              placeholder="Please enter your user name"
               clearable
               size="small"
               style="width: 240px"
               @keyup.enter.native="handleQuery"
             />
           </el-form-item>
-          <el-form-item label="状态" prop="status">
-            <el-select v-model="queryParams.status" placeholder="用户状态" clearable size="small" style="width: 240px">
+          <el-form-item label="state" prop="status">
+            <el-select v-model="queryParams.status" placeholder="User state" clearable size="small" style="width: 240px">
               <el-option v-for="dict in statusOptions" :key="dict.id" :label="dict.label" :value="dict.label" />
             </el-select>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
-            <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">重置</el-button>
+            <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">search</el-button>
+            <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">reset</el-button>
           </el-form-item>
         </el-form>
 
         <el-row :gutter="10" class="mb8">
           <el-col :span="1.5">
-            <el-button type="primary" icon="el-icon-plus" size="mini" @click="handleAdd">新增</el-button>
+            <el-button type="primary" icon="el-icon-plus" size="mini" @click="handleAdd">new</el-button>
           </el-col>
           <el-col :span="1.5">
-            <el-button type="success" icon="el-icon-edit" size="mini" :disabled="single" @click="handleUpdate">修改
+            <el-button type="success" icon="el-icon-edit" size="mini" :disabled="single" @click="handleUpdate">Modify the
             </el-button>
           </el-col>
           <el-col :span="1.5">
@@ -74,7 +72,7 @@
               size="mini"
               :disabled="multiple"
               @click="handleDelete"
-            >删除
+            >delete
             </el-button>
           </el-col>
           <el-col :span="1.5">
@@ -83,7 +81,7 @@
               icon="el-icon-upload2"
               size="mini"
               @click="handleImport"
-            >导入
+            >The import
             </el-button>
           </el-col>
           <el-col :span="1.5">
@@ -92,7 +90,7 @@
               icon="el-icon-download"
               size="mini"
               @click="handleExport"
-            >导出
+            >Out of the
             </el-button>
           </el-col>
         </el-row>
@@ -106,9 +104,9 @@
           <el-table-column label="状态" align="center" prop="status" :show-overflow-tooltip="true" />
           <el-table-column label="操作" align="center" width="180" class-name="small-padding fixed-width">
             <template slot-scope="scope">
-              <el-button size="mini" type="text" icon="el-icon-edit" @click="handleUpdate(scope.row)">修改</el-button>
-              <el-button size="mini" type="text" icon="el-icon-delete" @click="handleDelete(scope.row)">删除</el-button>
-              <el-button size="mini" type="text" icon="el-icon-key" @click="handleResetPwd(scope.row)">重置</el-button>
+              <el-button size="mini" type="text" icon="el-icon-edit" @click="handleUpdate(scope.row)">Modify the</el-button>
+              <el-button size="mini" type="text" icon="el-icon-delete" @click="handleDelete(scope.row)">delte</el-button>
+              <el-button size="mini" type="text" icon="el-icon-key" @click="handleResetPwd(scope.row)">reset</el-button>
             </template>
           </el-table-column>
         </el-table>

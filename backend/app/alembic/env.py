@@ -34,7 +34,7 @@ target_metadata = Base.metadata
 def get_url():
     user = "root"
     password = ""
-    server = "49.235.242.224:3306"
+    server = "localhost:3306"
     db = "DWDB"
     return f"mysql://{user}:{password}@{server}/{db}"
 

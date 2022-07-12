@@ -12,15 +12,15 @@
             </div>
             <ul class="list-group list-group-striped">
               <li class="list-group-item">
-                <svg-icon icon-class="user" />用户名称
+                <svg-icon icon-class="user" />username
                 <div class="pull-right">{{ user.userName }}</div>
               </li>
               <li class="list-group-item">
-                <svg-icon icon-class="phone" />手机号码
+                <svg-icon icon-class="phone" />Phone Number
                 <div class="pull-right">{{ user.phonenumber }}</div>
               </li>
               <li class="list-group-item">
-                <svg-icon icon-class="email" />用户邮箱
+                <svg-icon icon-class="email" />Email
                 <div class="pull-right">{{ user.email }}</div>
               </li>
               <li class="list-group-item">

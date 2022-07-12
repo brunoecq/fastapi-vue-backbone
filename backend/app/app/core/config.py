@@ -34,7 +34,7 @@ class Settings():
     #         return None
     #     return v
 
-    SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = "mysql://user:@ip/db_name?charset=utf8"
+    SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = "mysql://127.0.0.1:3306/dwdb?charset=utf8"
 
     # @validator("SQLALCHEMY_DATABASE_URI", pre=True)
     # def assemble_db_connection(cls, v: Optional[str], values: Dict[str, Any]) -> Any:
